@@ -1,0 +1,12 @@
+body { font-family:"Trebuchet MS", Helvetica; font-size:11px; }
+h1 { font-size:18px; font-weight:lighter; text-decoration:underline; text-align:center; display:block; }
+table { border: #dadada 1px solid; vertical-align: top; }
+th { font-weight: bold; text-align: center; background-color: #efefef; }
+td { vertical-align: text-top; }
+a { color: blue; }
+a:hover { color: red; }
+input { font-family: "Trebuchet MS"; font-size:10px; }
+
+.success_msg { color: #009999 }
+
+#footer { text-align:center; color:#575757; }
