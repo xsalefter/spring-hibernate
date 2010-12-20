@@ -1,5 +1,6 @@
 package org.xsalefter.springhibernate.model;
 
+import org.xsalefter.springhibernate.utils.ItemNameComparatorForItemReception;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
