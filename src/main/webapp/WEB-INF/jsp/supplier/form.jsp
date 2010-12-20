@@ -6,12 +6,12 @@
     <table>
         <tr>
             <td>Supplier Name</td><td>:</td>
-            <td><sf-form:input path="name" /></td>
+            <td><sf-form:input path="name" /> &nbsp; <sf-form:errors path="name" /></td>
         </tr>
 
         <tr>
             <td>Description</td><td>:</td>
-            <td><sf-form:input size="50" path="description" /></td>
+            <td><sf-form:input size="50" path="description" /> &nbsp; <sf-form:errors path="description" /></td>
         </tr>
 
         <tr>

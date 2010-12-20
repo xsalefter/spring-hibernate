@@ -1,8 +1,13 @@
 package org.xsalefter.springhibernate.controller;
 
+import java.util.HashSet;
+import java.util.Set;
 import javax.inject.Inject;
+import javax.validation.ConstraintViolation;
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,11 +47,14 @@ public class SupplierController {
     
 
     @RequestMapping(value="/supplier/save-action.html")
-    public String save(@ModelAttribute Supplier supplier, ModelMap map) {
+    public String save(@ModelAttribute @Valid Supplier supplier, BindingResult bindingResult, ModelMap map) {
         boolean persisted = supplier.getId() == null;
-        Supplier saved = this.supplierService.saveOrUpdate(supplier);
-        return "redirect:/supplier/display.html?supplierId=" + saved.getId()
-            + "&action=" + persisted;
+        if (!bindingResult.hasErrors()) {
+            Supplier saved = this.supplierService.saveOrUpdate(supplier);
+            return "redirect:/supplier/display.html?supplierId=" + saved.getId() + "&action=" + persisted;
+        } else {
+            return "/supplier/form";
+        }
     }
 
 

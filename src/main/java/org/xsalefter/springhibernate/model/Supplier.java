@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -21,6 +22,7 @@ import org.hibernate.annotations.FilterDef;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.ParamDef;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author xsalefter (xsalefter@gmail.com)
@@ -55,6 +57,8 @@ public class Supplier implements Serializable {
         this.id = id;
     }
 
+    @NotEmpty
+    @Size(min=3, max=50)
     @Column(name="supplier_name", nullable=false, length=50)
     public String getName() {
         return name;

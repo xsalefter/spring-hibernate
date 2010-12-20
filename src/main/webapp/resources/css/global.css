@@ -5,8 +5,9 @@ th { font-weight: bold; text-align: center; background-color: #efefef; }
 td { vertical-align: text-top; }
 a { color: blue; }
 a:hover { color: red; }
-input { font-family: "Trebuchet MS"; font-size:10px; }
+input { font-family:"Trebuchet MS"; font-size:10px; }
 
-.success_msg { color: #009999 }
+.success_msg { color:#009999; }
+.error_msg li { color:#ff6666; }
 
 #footer { text-align:center; color:#575757; }
